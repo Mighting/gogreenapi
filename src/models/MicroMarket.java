@@ -1,6 +1,6 @@
 package models;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class MicroMarket {
@@ -156,7 +156,8 @@ public class MicroMarket {
         ZipCodeID = zipCodeID;
     }
 
-    public String sqlInsertValues(){
+    //UNUSED CODE, DONT DELETE
+    /*public String sqlInsertValues(){
         java.text.SimpleDateFormat MysqlTimeFormat =
                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -173,5 +174,5 @@ public class MicroMarket {
                 MysqlTimeFormat.format(getOrderHoursEnd()) + "','" +
                 MysqlTimeFormat.format(getOpeningHoursStart()) + "','" +
                 MysqlTimeFormat.format(getOpeningHoursEnd()) + "'";
-    }
+    }*/
 }

@@ -1,6 +1,7 @@
 package Manager;
 
 
+import DB.MicroMarketDAOIMP;
 import models.MicroMarket;
 
 import javax.ws.rs.Consumes;
@@ -16,8 +17,10 @@ public class MicroMarketController {
 
     public void postNewMM(String message){
         MicroMarket mm = new MicroMarket();
-
         JsonConverter jc = new JsonConverter();
+        MicroMarketDAOIMP mmDAOIMP = new MicroMarketDAOIMP();
+
         mm = (MicroMarket) jc.StringToObject(message,mm.getClass());
+        mmDAOIMP.insert(mm);
     }
 }

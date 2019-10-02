@@ -1,8 +1,10 @@
 package DB;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import models.MicroMarket;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -20,13 +22,15 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
         return null;
     }
 
+    //TODO: Rewrite timeformat and InsertValues
     @Override
     public int insert(MicroMarket item) {
+        java.text.SimpleDateFormat MysqlTimeFormat =
+                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Connection con = MysqlCon.getCon();
         int code;
         try {
-            Statement stat = con.createStatement();
-            String qr = "INSERT INTO MicroMarket (ZipcodeId, " +
+            String insertString = "INSERT INTO MicroMarket (ZipcodeId, " +
                     "StreetName, " +
                     "HouseNumber, " +
                     "FloorNumber, " +
@@ -39,8 +43,25 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
                     "OrderHoursEnd, " +
                     "OpeningHoursStart, " +
                     "OpeningHoursEnd) " +
-                    "VALUES ("+ item.sqlInsertValues() +")";
-            code = stat.executeUpdate(qr);
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement preparedStatement = con.prepareStatement(insertString);
+            preparedStatement.setInt(1,item.getZipCodeID());
+            preparedStatement.setString(2,item.getStreetName());
+            preparedStatement.setString(3,item.getHouseNumber());
+            preparedStatement.setInt(4,item.getFloorNumber());
+            preparedStatement.setString(5,item.getPhoneNumber());
+            preparedStatement.setString(6,item.getEmail());
+            preparedStatement.setString(7,item.getFirstName());
+            preparedStatement.setString(8,item.getLastName());
+            preparedStatement.setInt(9,item.getActive());
+            preparedStatement.setDate(10,item.getOrderHoursStart());
+            preparedStatement.setDate(11,item.getOrderHoursEnd());
+            preparedStatement.setDate(12,item.getOpeningHoursStart());
+            preparedStatement.setDate(13,item.getOpeningHoursEnd());
+
+            code = preparedStatement.executeUpdate();
+
+
         }
         catch (SQLException sqle){
             return -1;
