@@ -1,19 +1,17 @@
 package DB;
 
-import com.sun.xml.internal.bind.v2.TODO;
-import models.MicroMarket;
 
+import models.MicroMarket;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
 
 
     @Override
-    public MicroMarket getFromId(int id) {
+    public MicroMarket getFromID(int ID) {
         return null;
     }
 
@@ -25,10 +23,8 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
     //TODO: Rewrite timeformat and InsertValues
     @Override
     public int insert(MicroMarket item) {
-        java.text.SimpleDateFormat MysqlTimeFormat =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Connection con = MysqlCon.getCon();
-        int code;
+        int returnCode;
         try {
             String insertString = "INSERT INTO MicroMarket (ZipcodeId, " +
                     "StreetName, " +
@@ -59,14 +55,14 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
             preparedStatement.setDate(12,item.getOpeningHoursStart());
             preparedStatement.setDate(13,item.getOpeningHoursEnd());
 
-            code = preparedStatement.executeUpdate();
+            returnCode = preparedStatement.executeUpdate();
 
 
         }
-        catch (SQLException sqle){
+        catch (SQLException sqlerror){
             return -1;
         }
-        return code;
+        return returnCode;
     }
 
     @Override

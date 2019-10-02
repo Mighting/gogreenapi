@@ -4,7 +4,7 @@ package Manager;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class JsonConverter implements Converter {
+public class JsonConverter implements Convertable {
 
 
     @Override

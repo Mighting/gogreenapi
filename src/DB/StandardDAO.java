@@ -3,7 +3,7 @@ package DB;
 import java.util.ArrayList;
 
 public interface StandardDAO<T> {
-    T getFromId(int id);
+    T getFromID(int id);
     ArrayList<T> getAll();
     int insert(T item);
     T add(T item);

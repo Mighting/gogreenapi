@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class MicroMarket {
 
-    private ArrayList<Product> ProductList = new ArrayList<Product>();
-    private int MicroMarketId;
-    private int ZipCodeID;
-    private Date OrderHoursStart;
-    private Date OrderHoursEnd;
-    private Date OpeningHoursStart;
-    private Date OpeningHoursEnd;
+    private ArrayList<Product> products = new ArrayList<Product>();
+    private int microMarketID;
+    private int zipCodeID;
+    private Date orderHoursStart;
+    private Date orderHoursEnd;
+    private Date openingHoursStart;
+    private Date openingHoursEnd;
     private String streetName;
     private String houseNumber;
     private int floorNumber;
@@ -19,49 +19,49 @@ public class MicroMarket {
     private String email;
     private String firstName;
     private String lastName;
-    private int Active;
+    private int active;
 
     public MicroMarket() {
     }
 
     public Date getOpeningHoursStart() {
-        return OpeningHoursStart;
+        return openingHoursStart;
     }
 
     public void setOpeningHoursStart(Date openingHoursStart) {
-        OpeningHoursStart = openingHoursStart;
+        this.openingHoursStart = openingHoursStart;
     }
 
     public Date getOpeningHoursEnd() {
-        return OpeningHoursEnd;
+        return openingHoursEnd;
     }
 
     public void setOpeningHoursEnd(Date openingHoursEnd) {
-        OpeningHoursEnd = openingHoursEnd;
+        this.openingHoursEnd = openingHoursEnd;
     }
 
     public Date getOrderHoursEnd() {
-        return OrderHoursEnd;
+        return orderHoursEnd;
     }
 
     public void setOrderHoursEnd(Date orderHoursEnd) {
-        OrderHoursEnd = orderHoursEnd;
+        this.orderHoursEnd = orderHoursEnd;
     }
 
     public Date getOrderHoursStart() {
-        return OrderHoursStart;
+        return orderHoursStart;
     }
 
     public void setOrderHoursStart(Date orderHoursStart) {
-        OrderHoursStart = orderHoursStart;
+        this.orderHoursStart = orderHoursStart;
     }
 
-    public ArrayList<Product> getProductList() {
-        return ProductList;
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 
-    public void setProductList(ArrayList<Product> productList) {
-        ProductList = productList;
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
     }
 
     public void addItem(Product product){
@@ -133,46 +133,26 @@ public class MicroMarket {
     }
 
     public int getActive() {
-        return Active;
+        return active;
     }
 
     public void setActive(int active) {
-        Active = active;
+        this.active = active;
     }
 
     public int getMicroMarketId() {
-        return MicroMarketId;
+        return microMarketID;
     }
 
     public void setMicroMarketId(int microMarketId) {
-        MicroMarketId = microMarketId;
+        this.microMarketID = microMarketId;
     }
 
     public int getZipCodeID() {
-        return ZipCodeID;
+        return zipCodeID;
     }
 
     public void setZipCodeID(int zipCodeID) {
-        ZipCodeID = zipCodeID;
+        this.zipCodeID = zipCodeID;
     }
-
-    //UNUSED CODE, DONT DELETE
-    /*public String sqlInsertValues(){
-        java.text.SimpleDateFormat MysqlTimeFormat =
-                new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        return getZipCodeID() + "," +
-                getStreetName() + "," +
-                getHouseNumber() + "," +
-                getFloorNumber() + "," +
-                getPhoneNumber() + "," +
-                getEmail() + "," +
-                getFirstName() + "," +
-                getLastName() + "," +
-                getActive() + ",'" +
-                MysqlTimeFormat.format(getOrderHoursStart()) + "','" +
-                MysqlTimeFormat.format(getOrderHoursEnd()) + "','" +
-                MysqlTimeFormat.format(getOpeningHoursStart()) + "','" +
-                MysqlTimeFormat.format(getOpeningHoursEnd()) + "'";
-    }*/
 }
