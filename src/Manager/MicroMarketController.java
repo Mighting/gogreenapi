@@ -9,15 +9,15 @@ import javax.ws.rs.Path;
 
 @Path("/MicroMarket/Create")
 public class MicroMarketController {
-    MicroMarket mm = new MicroMarket();
 
-    JsonConverter jc = new JsonConverter();
 
     @POST
     @Consumes("text/plain")
 
     public void postNewMM(String message){
-        jc.StringToObject(message,mm.getClass());
-        int i = 0;
+        MicroMarket mm = new MicroMarket();
+
+        JsonConverter jc = new JsonConverter();
+        mm = (MicroMarket) jc.StringToObject(message,mm.getClass());
     }
 }

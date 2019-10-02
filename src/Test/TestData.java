@@ -28,5 +28,6 @@ public class TestData {
 
     static String GetTestJsonMicroMarket() {
         return "{\"ProductList\":[],\"MicroMarketId\":0,\"ZipCodeID\":1,\"OrderHoursStart\":\"1970-01-01 01:01:40\",\"OrderHoursEnd\":\"1970-01-01 01:03:20\",\"OpeningHoursStart\":\"1970-01-01 03:46:40\",\"OpeningHoursEnd\":\"1970-01-02 04:46:40\",\"streetName\":\"Street\",\"houseNumber\":\"2\",\"floorNumber\":0,\"phoneNumber\":\"12345678\",\"email\":\"BelleGogreencom\",\"firstName\":\"Belle\",\"lastName\":\"Bellar\",\"Active\":1}";
+
     }
 }
