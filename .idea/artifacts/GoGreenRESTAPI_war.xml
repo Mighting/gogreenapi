@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="GoGreenRESTAPI:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/GoGreenRESTAPI_war</output-path>
-    <root id="archive" name="GoGreenRESTAPI_war.war">
-      <element id="artifact" artifact-name="GoGreenRESTAPI:war exploded" />
-    </root>
-  </artifact>
-</component>

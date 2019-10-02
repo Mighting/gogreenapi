@@ -1,21 +1,21 @@
 package models;
 
 public class Zipcode {
-    private String code;
+    private int code;
     private String country;
     private String city;
 
-    public Zipcode(String code, String country, String city) {
+    public Zipcode(int code, String country, String city) {
         this.code = code;
         this.country = country;
         this.city = city;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

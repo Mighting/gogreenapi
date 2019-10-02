@@ -19,10 +19,10 @@ public class ZipcodeDAOIMP implements StandardDAO<Zipcode> {
         try {
             Connection con = MysqlCon.getCon();
             Statement stmt = con.createStatement();
-            String qr = "SELECT * FROM zipcode";
+            String qr = "SELECT * FROM Zipcode";
             ResultSet rs = stmt.executeQuery(qr);
             while (rs.next()) {
-                String code = rs.getString("Zipcode");
+                int code = rs.getInt("Zipcode");
                 String country = rs.getString("Country");
                 String city = rs.getString("City");
                 list.add(new Zipcode(code, country, city));
