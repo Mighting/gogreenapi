@@ -16,8 +16,8 @@ public class MicroMarketController {
     @POST
     @Consumes("text/plain")
 
-    //TEST HERE!!!!!!!!!
     public void postNewMM(String message){
-        jc.StringToObject(message,mm);
+        jc.StringToObject(message,mm.getClass());
+        int i = 0;
     }
 }
