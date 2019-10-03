@@ -9,7 +9,7 @@ public class TestData {
 
     static MicroMarket GetTestMicroMarket() {
         MicroMarket mm = new MicroMarket();
-        mm.setZipCodeID(1);
+        mm.setZipCode(1);
         mm.setStreetName("Street");
         mm.setHouseNumber("2");
         mm.setFloorNumber(0);
@@ -22,6 +22,8 @@ public class TestData {
         mm.setOrderHoursEnd(new Date(200000));
         mm.setOpeningHoursStart(new Date(10000000));
         mm.setOpeningHoursEnd(new Date(100000000));
+        mm.setPassword("1234");
+
 
         return mm;
     }

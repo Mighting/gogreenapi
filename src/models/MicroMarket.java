@@ -7,7 +7,7 @@ public class MicroMarket {
 
     private ArrayList<Product> products = new ArrayList<Product>();
     private int microMarketID;
-    private int zipCodeID;
+    private int zipCode;
     private Date orderHoursStart;
     private Date orderHoursEnd;
     private Date openingHoursStart;
@@ -149,12 +149,12 @@ public class MicroMarket {
         this.microMarketID = microMarketId;
     }
 
-    public int getZipCodeID() {
-        return zipCodeID;
+    public int getZipCode() {
+        return zipCode;
     }
 
-    public void setZipCodeID(int zipCodeID) {
-        this.zipCodeID = zipCodeID;
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getPassword() {

@@ -26,7 +26,7 @@ public class SQLTest {
     }
 
     @Test
-    public void sqlInsertMMTest(){
+    public void sqlInsertMMTest() throws SQLException {
         MicroMarket mm = TestData.GetTestMicroMarket();
 
         Assert.assertEquals(1,DAOIMP.insert(mm));
