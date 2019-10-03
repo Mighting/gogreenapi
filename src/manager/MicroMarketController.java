@@ -13,7 +13,7 @@ public class MicroMarketController {
 
 
     @POST
-    @Consumes("text/plain")
+    @Consumes("application/json")
     public Response postNewMM(String message){
         MicroMarket mm = new MicroMarket();
         JsonConverter jc = new JsonConverter();
@@ -27,7 +27,7 @@ public class MicroMarketController {
                     .header("Access-Control-Allow-Origin", "*")
                     .header("Access-Control-Allow-Methods","GET, OPTIONS, HEAD, PUT, POST")
                     .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
-                    .header("Access-Control-Allow-Credentials", "true").build();
+                    .header("Access-Control-Allow-Credentials", "true").entity(e.getMessage()).build();
         }
         return Response.status(Response.Status.CREATED)
                 .header("Access-Control-Allow-Origin", "*")

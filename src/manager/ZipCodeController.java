@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Path("/Zipcode")
 public class ZipCodeController {
     @GET
-    @Produces("text/plain")
+    @Produces("application/json")
     public Response getClichedMessage() {
         ZipcodeDAOIMP zipcodeDAOIMP = new ZipcodeDAOIMP();
         ArrayList<Zipcode> list = zipcodeDAOIMP.getAll();

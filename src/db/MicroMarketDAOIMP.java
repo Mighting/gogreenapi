@@ -25,7 +25,7 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
     public int insert(MicroMarket item) throws SQLException {
         Connection con = MysqlCon.getCon();
         int returnCode;
-            String insertString = "INSERT INTO MicroMarket (Zipcode, " +
+            String insertString = "INSERT INTO MicroMarket (ZipCode, " +
                     "StreetName, " +
                     "HouseNumber, " +
                     "FloorNumber, " +
@@ -38,7 +38,7 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
                     "OrderHoursEnd, " +
                     "OpeningHoursStart, " +
                     "OpeningHoursEnd, " +
-                    "Password)" +
+                    "Password) " +
                     "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(insertString);
             preparedStatement.setInt(1,item.getZipCode());
@@ -50,10 +50,10 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
             preparedStatement.setString(7,item.getFirstName());
             preparedStatement.setString(8,item.getLastName());
             preparedStatement.setInt(9,1);
-            //preparedStatement.setDate(10,item.getOrderHoursStart());
-            //preparedStatement.setDate(11,item.getOrderHoursEnd());
-            //preparedStatement.setDate(12,item.getOpeningHoursStart());
-            //preparedStatement.setDate(13,item.getOpeningHoursEnd());
+            preparedStatement.setDate(10,null);
+            preparedStatement.setDate(11,null);
+            preparedStatement.setDate(12,null);
+            preparedStatement.setDate(13,null);
             preparedStatement.setString(14,item.getPassword());
 
             returnCode = preparedStatement.executeUpdate();
