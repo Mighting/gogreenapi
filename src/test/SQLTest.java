@@ -1,15 +1,13 @@
-package Test;
+package test;
 
-import DB.MicroMarketDAOIMP;
-import DB.MysqlCon;
-import DB.ZipcodeDAOIMP;
-import Manager.JsonConverter;
+import db.MicroMarketDAOIMP;
+import db.MysqlCon;
+import db.ZipcodeDAOIMP;
 import models.MicroMarket;
 import models.Zipcode;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 

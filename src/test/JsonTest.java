@@ -1,11 +1,9 @@
-package Test;
+package test;
 
-import Manager.JsonConverter;
+import manager.JsonConverter;
 import models.MicroMarket;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.sql.Date;
 
 public class JsonTest {
 

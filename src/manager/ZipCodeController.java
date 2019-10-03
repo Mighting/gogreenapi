@@ -1,6 +1,6 @@
-package Manager;
+package manager;
 
-import DB.ZipcodeDAOIMP;
+import db.ZipcodeDAOIMP;
 import models.Zipcode;
 
 import javax.ws.rs.GET;
