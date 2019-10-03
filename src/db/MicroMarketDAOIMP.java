@@ -2,22 +2,46 @@ package db;
 
 
 import models.MicroMarket;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import models.Zipcode;
+
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
 
 
+    //This is for Xamarin app view, Only contain SFW things
     @Override
     public MicroMarket getFromID(int ID) {
         return null;
     }
 
+    //This is for Admins
     @Override
     public ArrayList<MicroMarket> getAll() {
-        return null;
+        ArrayList<MicroMarket> list = new ArrayList<MicroMarket>();
+        try {
+            Connection con = MysqlCon.getCon();
+            Statement stmt = con.createStatement();
+            String qr = "SELECT * FROM MicroMarket";
+            ResultSet rs = stmt.executeQuery(qr);
+            while (rs.next()) {
+                String streetName = rs.getString("StreetName");
+                String houseNumber = rs.getString("HouseNumber");
+                int zipCode = rs.getInt("Zipcode");
+                String firstName = rs.getString("FirstName");
+                MicroMarket mm = new MicroMarket();
+                mm.setStreetName(streetName);
+                mm.setHouseNumber(houseNumber);
+                mm.setFirstName(firstName);
+                mm.setZipCode(zipCode);
+                list.add(mm);
+            }
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
     //TODO: Rewrite timeformat and InsertValues

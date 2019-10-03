@@ -3,10 +3,10 @@ package manager;
 
 import db.MicroMarketDAOIMP;
 import models.MicroMarket;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 
 @Path("/MicroMarket")
 public class MicroMarketController {
@@ -34,5 +34,15 @@ public class MicroMarketController {
                 .header("Access-Control-Allow-Methods","GET, OPTIONS, HEAD, PUT, POST")
                 .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
                 .header("Access-Control-Allow-Credentials", "true").build();
+    }
+
+    @GET
+    @Produces("application/json")
+    public Response getClichedMessage() {
+        MicroMarketDAOIMP microMarketDAOIMP = new MicroMarketDAOIMP();
+        ArrayList<MicroMarket> mmlist = microMarketDAOIMP.getAll();
+        JsonConverter js = new JsonConverter();
+        String s = js.ObjectToString(mmlist);
+        return Response.status(Response.Status.OK).entity(s).header("Access-Control-Allow-Origin", "*").build();
     }
 }
