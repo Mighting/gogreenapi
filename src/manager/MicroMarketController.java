@@ -43,6 +43,10 @@ public class MicroMarketController {
         ArrayList<MicroMarket> mmlist = microMarketDAOIMP.getAll();
         JsonConverter js = new JsonConverter();
         String s = js.ObjectToString(mmlist);
-        return Response.status(Response.Status.OK).entity(s).header("Access-Control-Allow-Origin", "*").build();
+        return Response.status(Response.Status.OK).entity(s)
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods","GET, OPTIONS, HEAD, PUT, POST")
+                .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+                .header("Access-Control-Allow-Credentials", "true").build();
     }
 }
