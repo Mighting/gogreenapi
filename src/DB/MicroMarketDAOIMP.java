@@ -38,8 +38,9 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
                     "OrderHoursStart, " +
                     "OrderHoursEnd, " +
                     "OpeningHoursStart, " +
-                    "OpeningHoursEnd) " +
-                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    "OpeningHoursEnd, " +
+                    "Password)" +
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(insertString);
             preparedStatement.setInt(1,item.getZipCodeID());
             preparedStatement.setString(2,item.getStreetName());
@@ -54,6 +55,7 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
             preparedStatement.setDate(11,item.getOrderHoursEnd());
             preparedStatement.setDate(12,item.getOpeningHoursStart());
             preparedStatement.setDate(13,item.getOpeningHoursEnd());
+            preparedStatement.setString(14,item.getPassword());
 
             returnCode = preparedStatement.executeUpdate();
 

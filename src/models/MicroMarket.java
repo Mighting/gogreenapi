@@ -20,6 +20,7 @@ public class MicroMarket {
     private String firstName;
     private String lastName;
     private int active;
+    private String password;
 
     public MicroMarket() {
     }
@@ -154,5 +155,13 @@ public class MicroMarket {
 
     public void setZipCodeID(int zipCodeID) {
         this.zipCodeID = zipCodeID;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
