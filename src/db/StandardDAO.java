@@ -3,6 +3,7 @@ package db;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+//A generic DAO pattern
 public interface StandardDAO<T> {
     T getFromID(int id);
     ArrayList<T> getAll();

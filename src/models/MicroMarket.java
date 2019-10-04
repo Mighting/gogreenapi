@@ -3,6 +3,7 @@ package models;
 import java.sql.Date;
 import java.util.ArrayList;
 
+//Model for a MicroMarket
 public class MicroMarket {
 
     private ArrayList<Product> products = new ArrayList<Product>();

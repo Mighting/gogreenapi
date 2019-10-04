@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class JsonTest {
 
+
     @Test
     public void ObjectToJson(){
         MicroMarket mm = TestData.GetTestMicroMarket();

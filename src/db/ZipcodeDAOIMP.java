@@ -13,6 +13,7 @@ public class ZipcodeDAOIMP implements StandardDAO<Zipcode> {
         return null;
     }
 
+    //getAll is called by the website to get all the zipcode in the DB
     @Override
     public ArrayList<Zipcode> getAll() {
         ArrayList<Zipcode> list = new ArrayList<Zipcode>();

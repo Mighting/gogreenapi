@@ -10,13 +10,13 @@ import java.util.ArrayList;
 public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
 
 
-    //This is for Xamarin app view, Only contain SFW things
+
     @Override
     public MicroMarket getFromID(int ID) {
         return null;
     }
 
-    //This is for Admins
+    //getAll is called by the Xamarin App to get all the M.M in the DB
     @Override
     public ArrayList<MicroMarket> getAll() {
         ArrayList<MicroMarket> list = new ArrayList<MicroMarket>();
@@ -45,6 +45,7 @@ public class MicroMarketDAOIMP implements StandardDAO<MicroMarket> {
     }
 
     //TODO: Rewrite timeformat and InsertValues
+    //Called by the website to insert a M.M into the DB
     @Override
     public int insert(MicroMarket item) throws SQLException {
         Connection con = MysqlCon.getCon();

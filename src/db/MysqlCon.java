@@ -10,6 +10,7 @@ public class MysqlCon {
 
     }
 
+    //sql connection
     public static Connection getCon(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
